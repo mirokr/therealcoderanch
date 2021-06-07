@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<!--The A-Team, 19/04/2021-->
+		<meta charset="UTF-8">
+		<meta name="description" content="Developer Covid Free Holidays">
+		<meta name="keywords" content="HTML, CSS, JavaScript, horse-riding, COVID-19 isolation, coronavirus isolation, Croatia camp,  Split Croatia, ranch, code, real, dubrovnik, Adriatic, growth, professional, camp, code bootcamp, code bootcamp reddit, tourism, code camp for adults, code camp world, code camp developer, Europe code camp">
+		<meta name="author" content="The A-Team">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>TheRealCodeRanch</title>
+		<link href="bootstrap.css" rel="stylesheet" />
+		<link rel="shortcut icon" type="image/svg" href="legalImages/rcrfavicon.svg" />
+<!-- too speed up page loading moved from external file -->
+		<style>
+		.heading {
+		  position: relative;
+		  width: 100%;
+		  height: auto;
+		  min-height: 35rem;
+		  padding: 15rem 0;
+		  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 95%, #000000 100%), url("legalImages/freedom2.jpg");
+		  background-position: center;
+		  background-repeat: no-repeat;
+		  background-attachment: scroll;
+		  background-size: cover;
+		}
+		</style>
+	</head>
+    <body >
+<!-- form in the nav -->
+		 <div class="pos-f-t" >
+			<div class="collapse" id="navbarToggleExternalContent">
+				<div class="bg-dark p-4">
+					<form id="total-form" class="white-popup-block">						                
+                         <h3>Check Price</h3>                            
+                             <div class="row">
+								 <div class="col-xl-3 ">
+									<input id="datepicker" placeholder="Check in date" type="text" class="form-select wide">
+								 </div>
+                                  <div class="col-xl-3">
+									<input id="datepicker2" placeholder="Check out date" type="text" class="form-select wide">
+                                  </div>								 
+								  <div class="col-xl-3">
+									<input id="num_nights" placeholder="Number of nights" type="text" readonly >
+                                  </div>								 
+								  <div class="col-xl-3">								 
+								  <input id="price"  placeholder="Price pp/pn 300 euros" type="text" readonly >
+								  </div>	
+							</div>	
+							<div class="row">
+								  <div class="col-xl-4">
+                                        <select class="package form-select wide" id="package-select" >
+                                            <option data-display="Children">Package</option>
+											<option value="1">Sailing(+10%)</option>
+                                            <option value="2">Horseriding</option>
+                                            <option value="3">Mix</option>
+                                            <option value="4">Have other plans...</option>
+                                        </select>
+                                  </div>
+                                  <div class="col-xl-4">
+                                        <select class="adults form-select wide" id="adults-select" onclick="showToast3()">
+                                            <option data-display="Adult">Adults</option>											
+											<option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>                                  
+                                    <div class="col-xl-4">
+                                        <select class="children form-select wide" id="children-select" >
+                                            <option data-display="Room type">Children (less then 12 year old -50%)</option>
+											<option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>     
+											<option value="4">4</option>   
+											<option value="5">5</option>   
+                                        </select>
+                                    </div>
+							</div>	
+							<div class="row">
+									 <div class="col-xl-4">
+                                        <select class="bungalow form-select wide" id="roomType-select" onclick="showToast2()" >
+                                            <option data-display="Room type">Bungalow type</option>
+                                            <option value="1">DevelopersDreamBungalow</option>
+                                            <option value="2">Family</option>
+                                            <option value="3">Star Trek Theme(+10%)</option>     
+											<option value="4">Star Wars Theme(+10%)</option>   
+                                        </select>
+                                    </div>
+									</div>
+									<div class="row">
+									<div class="col-xl-12">
+                                        <button type="submit" onclick="totMethod() " class="boxed-btn3">Get Price</button>
+                                    </div>
+									</div>
+									<div class="row">
+									<div class="col-xl-12">								 
+								    <input id="totalPrice"  placeholder="Total Price" type="text" readonly >
+								    </div>
+                            </div>                                                   						
+					</form>	  
+				</div>		
+			</div> 
+<!-- navbar	 -->		
+				<nav class="navbar navbar-dark bg-dark " >
+					<div class="container-fluid">
+					 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">Check Price
+					  <span class="navbar-toggler-icon" ></span>
+					</button>
+					<a class="btn navbar-toggler btn-primary" href="fun.html" >Fun</a>
+					<a class="btn navbar-toggler btn-primary" href="safety.html">Safety</a>
+					<a class="btn navbar-toggler btn-primary" href="develop.html">Develop</a>
+					</div>
+				</nav>
+		</div>
+		 <header class="heading">
+<!-- the real code ranch -->
+            <div class="container d-flex h-100 align-items-center no-gutters">
+                <div class="mx-auto text-center">
+					<img class="logo_heading" src="legalImages/realcodelogo_white.svg" alt="real code ranch logo">
+                    <h1 class="mx-auto my-0 text-uppercase">The Real Code Ranch</h1>
+					 <h2 class="text-white-50 mx-auto mt-2 mb-5 "> Located in Split, Croatia</h2>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">
+					Offering growth and relaxation during COVID-19</h2>                 					
+                </div>
+			</div> 
+        </header>
+<!-- intro middle part	 -->			
+		  <section class="leap-section bg-black text-center" id="leap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-white mb-4">Offering growth and relaxation during COVID-19</h2>
+                        <p class="text-white-50">
+							The Real Code Ranch provides safe, collaborative, and fulfilling professional experiences that will boost your career
+							and create new opportunities for growth. Whether you're an early-career developer or a veteran developer in your field,
+							The Real Code Ranch has something for everyone. The Real Code Ranch is a family-friendly resort and ranchers are
+							encouraged to view our family package pricing options.  </p>
+						<h2 class="text-white mb-4">It's time to get back in the saddle..</h2>                    
+                    </div>
+                </div>
+			</div>	
+		  </section>	 
+<!-- sea photo -->		
+			 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" aria-label="Slide 10"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="10" aria-label="Slide 11"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="11" aria-label="Slide 12"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="12" aria-label="Slide 13"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="13" aria-label="Slide 14"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="14" aria-label="Slide 15"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="15" aria-label="Slide 16"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="16" aria-label="Slide 17"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="17" aria-label="Slide 18"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="18" aria-label="Slide 19"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="19" aria-label="Slide 20"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="20" aria-label="Slide 21"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="21" aria-label="Slide 22"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">				
+						<img src="legalimages/croatia.jpg" class="d-block w-100" alt="get_away">					
+						   <div class="carousel-caption d-none d-md-block">
+							<h5>One thousand islands to explore</h5>							
+						  </div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/sailing3.jpg" class="d-block w-100" alt="relax" >
+						<div class="carousel-caption d-none d-md-block">
+							<h5>National Park, Kornati</h5>							
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/sailing2.jpg" class="d-block w-100" alt="resort">
+						<div class="carousel-caption d-none d-md-block">
+							<h5>National Park, Kornati</h5>							
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/sailing.jpg" class="d-block w-100" alt="all included">
+						<div class="carousel-caption d-none d-md-block">
+							<h5>National Park, Kornati</h5>							
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/b&b.jpg" class="d-block w-100" alt="organic food">
+						<div class="carousel-caption d-none d-md-block">
+							<h5>TRCR, Split</h5>							
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/restaurant.jpg" class="d-block w-100" alt="healthy food">
+						<div class="carousel-caption d-none d-md-block">
+							<h5>TRCR, Split</h5>							
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/room.jpg" class="d-block w-100" alt="modern">
+						<div class="carousel-caption d-none d-md-block">
+							<h5>TRCR, Split</h5>							
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/beach_riding.jpg" class="d-block w-100" alt="animals" >
+						<div class="carousel-caption d-none d-md-block">
+							<h5>TRCR, Split</h5>							
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/hill_riding.jpg" class="d-block w-100" alt="nature">
+						<div class="carousel-caption d-none d-md-block">
+							<h5>TRCR, Split</h5>							
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/krka.jpg" class="d-block w-100" alt="river">
+						<div class="carousel-caption d-none d-md-block">
+							<h5>National Park, Krka</h5>							
+					</div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/bol.jpg" class="d-block w-100" alt="relax">
+						<div class="carousel-caption d-none d-md-block">
+							<h5>Island of Brac, Bol beach</h5>							
+						</div>
+					</div>
+						<div class="carousel-item">
+						<img src="legalimages/rab.jpg" class="d-block w-100" alt="beautifull">
+						<div class="carousel-caption d-none d-md-block">
+							<h5>Island of Rab</h5>							
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/split1.jpg" class="d-block w-100" alt="break">
+							<div class="carousel-caption d-none d-md-block">
+								<h5>City of Split</h5>								
+							</div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/split2.jpg" class="d-block w-100" alt="fly">
+							<div class="carousel-caption d-none d-md-block">
+								<h5>City of Split, Fruit Square</h5>							
+							</div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/split3.jpg" class="d-block w-100" alt="vacation">
+							<div class="carousel-caption d-none d-md-block">
+								<h5>City of Split, Pjaca</h5>						
+							</div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/split4.jpg" class="d-block w-100" alt="holiday">
+							<div class="carousel-caption d-none d-md-block">
+								<h5>City of Split, Riva</h5>						
+							</div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/split5.jpg" class="d-block w-100" alt="culture">
+							<div class="carousel-caption d-none d-md-block">
+								<h5>City of Split, Peristil</h5>							
+							</div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/split6.jpg" class="d-block w-100" alt="culture">
+							<div class="carousel-caption d-none d-md-block">
+								<h5>City of Split, Prokurativa</h5>							
+							</div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/split7.jpg" class="d-block w-100" alt="church">
+						<div class="carousel-caption d-none d-md-block">
+								<h5>City of Split, Riva</h5>								
+						</div>						
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/hvar.jpg" class="d-block w-100" alt="island">
+						<div class="carousel-caption d-none d-md-block">
+								<h5>Island of Hvar</h5>								
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/plitvice.jpg" class="d-block w-100" alt="nature">
+						<div class="carousel-caption d-none d-md-block">
+								<h5>National Park Plitvice</h5>								
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="legalimages/pakostane.jpg" class="d-block w-100" alt="pleasure">
+						<div class="carousel-caption d-none d-md-block">
+								<h5>Pakostane</h5>								
+						</div>
+					</div>
+				</div>
+			    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+			    </button>
+			    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+			  </button>
+			</div>			
+<!-- footer -->
+			<footer class="some footer bg-black small text-center text-white-50">			
+				 <a class="btn navbar-toggler btn-primary" href="fun.html">Fun</a>
+				 <a class="btn navbar-toggler btn-primary"  href="safety.html" >Safety</a>
+				 <a class="btn navbar-toggler btn-primary" href="develop.html">Develop</a>	
+				 <a class="btn navbar-toggler btn-primary" href="mailto:therealcoderanch@gmail.com">Contact</a>
+				 <!--  <a href='https://www.freepik.com/'>Thanks for photos www.freepik.com</a> -->
+				 <div class="container">Copyright © TRCR 2021</div>
+			</footer> 
+			  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+			  <script src="scripts.js"></script>
+		      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>		
+    </body>
+</html>

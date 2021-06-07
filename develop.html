@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+			<meta charset="UTF-8">
+			<meta name="description" content="Developer Covid Free Holidays">
+			<meta name="keywords" content="HTML, CSS, JavaScript">
+			<meta name="author" content="The A-Team">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>TheRealCodeRanch</title>
+			<link href="bootstrap.css" rel="stylesheet" />
+			<link rel="shortcut icon" type="image/svg" href="legalImages/rcrfavicon.svg" />
+</head>
+<body>
+   <div class="container-fluid bg-black ">
+        <div class="pos-f-t">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark p-4">
+                    <form id="total-form" class="white-popup-block">
+                        <h3>Check Price</h3>
+                        <div class="row">
+                            <div class="col-xl-3 ">
+                                <input id="datepicker" placeholder="Check in date" type="text" class="form-select wide">
+                            </div>
+                            <div class="col-xl-3">
+                                <input id="datepicker2" placeholder="Check out date" type="text"
+                                    class="form-select wide">
+                            </div>
+                            <div class="col-xl-3">
+                                <input id="num_nights" placeholder="Number of nights" type="text" readonly>
+                            </div>
+                            <div class="col-xl-3">
+                                <input id="price" placeholder="Price pp/pn 300 euros" type="text" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-4">
+                                <select class="package form-select wide" id="package-select">
+                                    <option data-display="Children">Package</option>
+                                    <option value="1">Sailing(+10%)</option>
+                                    <option value="2">Horseriding</option>
+                                    <option value="3">Mix</option>
+                                    <option value="4">Have other plans...</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-4">
+                                <select class="adults form-select wide" id="adults-select" onclick="showToast3()">
+                                    <option data-display="Adult">Adults</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+
+                            <div class="col-xl-4">
+                                <select class="children form-select wide" id="children-select">
+                                    <option data-display="Room type">Children (less then 12 year old -50%)</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-4">
+                                <select class="bungalow form-select wide" id="roomType-select" onclick="showToast2()">
+                                            <option data-display=" Room type">Bungalow type</option>
+                                    <option value="1">DevelopersDreamBungalow</option>
+                                    <option value="2">Family</option>
+                                    <option value="3">Star Trek Theme(+10%)</option>
+                                    <option value="4">Star Wars Theme(+10%)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <button type="submit" onclick="totMethod()" class="boxed-btn3">Get Price</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <input id="totalPrice" placeholder="Total Price" type="text" readonly>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- navbar	 -->
+            <nav class="navbar navbar-dark bg-dark ">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation" >Check Price
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="btn navbar-toggler btn-primary" href="index.html">Home</a>
+                <a class="btn navbar-toggler btn-primary" href="safety.html">Safety</a>
+                <a class="btn navbar-toggler btn-primary" href="fun.html">Fun</a>
+
+            </nav>
+        </div>
+<header class="develop-head">
+    <div class="container col-12">
+        <div class="mx-auto text-center">         
+            <img class="logo_heading" src="legalImages/realcodelogo_white.svg" alt="real code ranch logo">
+            <div class="mx-auto my-0 text-uppercase"><h1>Develop </h1> </div>
+            <h2 class="text-white-50 mx-auto mt-2 mb-5">Our unique skillshares, hackathons, and networking opportunities offer our ranchers a chance to learn, grow, and develop their skills</h2>
+        </div>
+        <div class="row flex">
+            <div class="col-sm">
+                <!-- <button type="button" class="btn btn-primary" id="individual-btn">Individual</button> -->
+                <a class="btn btn-individual" href="#develop-individual" role="button">Individual</a>
+            </div>
+            <div class="col-sm">
+                <a class="btn btn-corporate" href="#develop-corporate" role="button">Corporate</a>
+            </div>
+        </div>
+    </div>    
+</header>
+   </div>
+<section class="section text-center" id="develop-individual">
+    <div class="container col-12">
+        <div class="row justify-content-center no-gutters">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-white mb-4">"What can Real Code Ranch offer me as an individual developer?"
+                </h2>
+                <p class="text-white-50">
+                    The Real Code Ranch provides a new way to upskill and network in a holiday environment. Work and play to your
+                    heart's content!
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container col-12">
+        <div class="container-fluid">
+            <div class="row justify-content-center no-gutters">
+                <div class="col-sm-8 mx-auto">
+                    <h2>
+                        Learn
+                    </h2> </br>                   
+                    <p> Join a class, catch a panel discussion, participate in a skillshare with your coding colleagues - we offer a full
+                    programme of faciltated learning events at The Real Code Ranch</p>
+                </div>
+                <div class="col-sm-4 mx-auto" id="stats-box">
+                    <h1>
+                        <div class="counter">
+                        </div>
+                    </h1>
+                    <p>out of 100 previous vistors to the Real Code Ranch said they increased their skills during their
+                        visit</p>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <div class="container col-12">
+        <div class="container-fluid">
+            <div class="row justify-content-center no-gutters">
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="legalImages/networking_2.jpg" alt="people networking" />
+                </div>
+                <div class="col-sm-6 mx-auto">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center">
+                                <h2>
+                                    Network
+                                </h2>
+                                <p> 80% of vistors said they found a new job, a new friend, or a new mentor during their stay at The Real Code Ranch</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container col-12">
+        <div class="row justify-content-center no-gutters">
+            <div class="col-sm-8 mx-auto">
+                <div class="bg-black text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text w-100 my-auto text-center">
+                            <blockquote id="testemonial-1">
+                                <h1>"I learned so much during my week in the Real Code Ranch and made so many new
+                                    contacts, and friends" </h1> <em> Viriginia Wolfe, Dublin</em> </br> </br>
+                                <a class="btn btn-email" href="mailto:realcoderanch@gmail.com" role="button">Email Us
+                                    For More Info</a></br> </br>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <img class="img-fluid" src="legalImages/virignia.jpg" alt="virginia testemonial portrait" />
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section text-center" id="develop-corporate">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="mb-4">"What can Real Code Ranch offer me as an employer?"
+                </h2>
+                <p>
+                    The Real Code Ranch provides safe environment for your employees to grow their technical skills by learning from the very best. Whether you send them individually or as part of a team, your employees' time at The Real Code Ranch is an
+                    unforgettable investment in their career and a significant indicator of improved future performance.
+                </p>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row justify-content-center no-gutters">
+                <div class="col-sm-8 mx-auto">
+                    <h2>
+                        Upsklling
+                    </h2> </br>
+                    <p> We can offer your team facilitated skillshares,classes and panel discussions with industry
+                        experts.</p>
+                </div>
+                <div class="col-sm-4 mx-auto" id="stats-box_2">
+                    <h1>
+                        <div class="counter_2">
+                        </div>
+                    </h1>
+                    <p>out of 100 team leads said their collegaues were more confident, effeicent and cohesive after
+                        their stay at the Real Code Ranch</p>
+                </div>
+            </div>
+            <div class="row justify-content-center no-gutters">
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="legalImages/team_activity.jpg" alt="people networking" />
+                </div>
+                <div class="col-sm-6 mx-auto">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center">
+                                <h2>
+                                    Team Building
+                                </h2>
+
+                                <p> The team that plays together, stays together! We offer a full range of actvities for
+                                    your team to enjoy together.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center no-gutters">
+            <div class="col-sm-8 mx-auto">
+                <div class="bg-black text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text w-100 my-auto text-center">
+                            <blockquote id="testemonial-1">
+                                <h1>"Me and my colleagues had so much fun at the Real Code Ranch, and I can say we are
+                                    defintely more together as a team now" </h1> <em> Christine Quinn, Product Lead,
+                                    Tunfy</em> </br> </br>
+                                <a class="btn btn-email" href="mailto:realcoderanch@gmail.com" role="button">Email Us
+                                    For
+                                    More Info</a></br> </br>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <img class="img-fluid" src="legalImages/networking.jpg" alt="virginia testemonial portrait" />
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section text-center" id="logo-ticker">
+    <div class="overflow-hidden">
+        <div class="container col-12">
+            <h2> Some of the great companies we've worked with before</h2>
+            <div class="flex col-12 img-ticker">
+                <!--https://nolte.io/blog/a-continuous-image-ticker-built-with-pure-css/-->
+                <img class="col-2 self-start flex " src="legalImages/NetworkOn-02.svg" alt="work">
+                <img class="col-2 self-start flex " src="legalImages/VogleSearch-05.svg" alt="work">
+                
+                <img class="col-2 self-start flex" src="legalImages/Tunefy-01.svg" alt="play">
+                <img class="col-2 self-start flex" src="legalImages/TheWorldTimes-04.svg" alt="productive">
+                
+                
+                </div>
+        </div>
+    </div>
+</section>
+        <footer class="some footer bg-black small text-center text-white-50">
+            <a class="btn navbar-toggler btn-primary" href="index.html">Home</a>
+            <a class="btn navbar-toggler btn-primary" href="safety.html">Safety</a>
+            <a class="btn navbar-toggler btn-primary" href="fun.html">Fun</a>
+            <a class="btn navbar-toggler btn-primary" href="mailto:therealcoderanch@gmail.com">Contact</a>
+            <div class="container">Copyright © TRCR 2021</div>
+        </footer>       
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+		<script src="scripts.js"></script>
+    </body>      
+ </html>

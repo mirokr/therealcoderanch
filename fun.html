@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<!--The A-Team, 19/04/2021-->	
+	<meta charset="UTF-8">
+		<meta name="description" content="Developer Covid Free Holidays">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="The A-Team">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>TheRealCodeRanch</title>
+		<link href="bootstrap.css" rel="stylesheet" />
+        <link rel="shortcut icon" type="image/svg" href="legalImages/rcrfavicon.svg" />
+		<!-- css inline for faster page loading -->
+		<style>
+		 .heading1Fun {
+		  position: relative;
+		  width: 100%;
+		  height: auto;
+		  min-height: 35rem;
+		  padding: 15rem 0;
+		  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 75%, #000000 100%), url("legalImages/the-drink-1.jpg");
+		  background-position: center;
+		  background-repeat: no-repeat;
+		  background-attachment: scroll;
+		  background-size: cover;
+		}
+		</style>
+	</head>
+    <body >	
+	 <div class="container-fluid bg-black ">
+			 <div class="pos-f-t" >
+			<div class="collapse" id="navbarToggleExternalContent">
+				<div class="bg-dark p-4">
+					<form id="total-form" class="white-popup-block">						                
+                         <h3>Check Price</h3>                            
+                             <div class="row">
+								 <div class="col-xl-3 ">
+									<input id="datepicker" placeholder="Check in date" type="text" class="form-select wide">
+								 </div>
+                                  <div class="col-xl-3">
+									<input id="datepicker2" placeholder="Check out date" type="text" class="form-select wide">
+                                  </div>								 
+								  <div class="col-xl-3">
+									<input id="num_nights" placeholder="Number of nights" type="text" readonly >
+                                  </div>								 
+								  <div class="col-xl-3">								 
+								  <input id="price"  placeholder="Price pp/pn 300 euros" type="text" readonly >
+								  </div>	
+							</div>	
+							<div class="row">
+								  <div class="col-xl-4">
+                                        <select class="package form-select wide" id="package-select" >
+                                            <option data-display="Children">Package</option>
+											<option value="1">Sailing(+10%)</option>
+                                            <option value="2">Horseriding</option>
+                                            <option value="3">Mix</option>
+                                            <option value="4">Have other plans...</option>
+                                        </select>
+                                  </div>
+                                  <div class="col-xl-4">
+                                        <select class="adults form-select wide" id="adults-select" onclick="showToast3()">
+                                            <option data-display="Adult">Adults</option>
+											<option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>                                  
+                                    <div class="col-xl-4">
+                                        <select class="children form-select wide" id="children-select" >
+                                            <option data-display="Room type">Children (less then 12 year old -50%)</option>
+											<option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>     
+											<option value="4">4</option>   
+											<option value="5">5</option>   
+                                        </select>
+                                    </div>
+							</div>	
+							<div class="row">
+									 <div class="col-xl-4">
+                                        <select class="bungalow form-select wide" id="roomType-select" onclick="showToast2()">
+                                            <option data-display="Room type">Bungalow type</option>
+                                            <option value="1">DevelopersDreamBungalow</option>
+                                            <option value="2">Family</option>
+                                            <option value="3">Star Trek Theme(+10%)</option>     
+											<option value="4">Star Wars Theme(+10%)</option>   
+                                        </select>
+                                    </div>
+									</div>
+									<div class="row">
+									<div class="col-xl-12">
+                                        <button type="submit" onclick="totMethod()" class="boxed-btn3">Get Price</button>
+                                    </div>
+									</div>
+									<div class="row">
+									<div class="col-xl-12">								 
+								    <input id="totalPrice"  placeholder="Total Price" type="text" readonly >
+								    </div>
+                            </div>                                                   						
+					</form>	  
+				</div>		
+			</div> 
+<!-- navbar	 -->		
+				<nav class="navbar navbar-dark bg-dark " >
+					<button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" >Check Price
+					  <span class="navbar-toggler-icon" ></span>
+					</button>
+					<a class="btn navbar-toggler btn-primary" href="index.html"  >Home</a>
+					<a class="btn navbar-toggler btn-primary" href="safety.html" >Safety</a>				
+					<a class="btn navbar-toggler btn-primary" href="develop.html" >Develop</a>								
+				</nav>
+			</div>					 
+				<header class="heading1Fun no-gutters">		 
+				<div class="mx-auto text-center">
+					<img class="logo_heading" src="legalImages/realcodelogo_white.svg" alt="real code ranch logo">
+				<h1 class="mx-auto my-0 text-uppercase">Explore Croatia</h1>
+				</div>
+				</header>
+			<div class="fun-section bg-black" id="fun">
+            <div class="container">
+				<div class="row justify-content-center no-gutters">	
+					<div class="col-lg-12 bg-black">
+					<h3 class="text-center text-white order-lg-first ">The Real Code Ranch offers its customers a number of outdoors activities to explore Croatia and recharge after camp.</h3>
+				</div>
+				</div>
+				<div class="row justify-content-center no-gutters">
+					<div class="col-lg-6"><img class="img-fluid" src="legalImages/horse1.jpg" alt="nature"/></div>
+					<div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+									<h4 class="text-white">Horse-Riding</h4>
+									<p class="text-white-50 mb-0">The Real Code Ranch has its own stables with family-friendly horses for all sizes and skill levels. Riders receive personal protective equipment and training before leaving the ranch. There's no better place to experience Croatia's wild landscapes and feel the spark of adventure than from the saddle.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+                <div class="row justify-content-center no-gutters">
+                    <div class="col-lg-6"><img class="img-fluid" src="legalImages/dubrovnik-1.jpg" alt="history"/></div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">Historic Cities</h4>
+                                    <p class="text-white-50 mb-0">The Real Code Ranch's central location lends itself to bus tours of historic centers of trade on the Adriatic sea dating to the middle ages. Private ranch buses leave the ranch for Dubrovnik every two hours, with optional tours for all customers. Visit the historic Walls of Dubrovnik and imposing the Fort of Lovrijenac - both recognisable as locations in <i>Game of Thrones</i>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center no-gutters">
+                    <div class="col-lg-6"><img class="img-fluid" src="legalImages/trogir1.jpg" alt="famous" /></div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <h4 class="text-white">A Change of Pace</h4>
+                                    <p class="mb-0 text-white-50">If the hustle and bustle of cities isn't to your taste, The Real Code Ranch offers its private chalets in the sleepy island town of Trogir. Trogir is a UNESCO World Heritage Site, whose winding streets are lined with Romanesque, Renaissance, and Baroque architecture. </p>
+                                    <hr class="d-none d-lg-block mb-0 mr-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				 <div class="row justify-content-center no-gutters ">
+                    <div class="col-lg-6"><img class="img-fluid" src="legalImages/sunset1.jpg" alt="trend" /></div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">Sailing Adventures</h4>
+                                    <p class="mb-0 text-white-50">The wind in your sails and the fresh sea air - is there anything better? The Real Code Ranch has yachts available for charter that are crewed by experienced mariners. We offer anything from 1 cabin sailboats to a 40 ft catamaran. Be the captain of your own ship on the beautiful Adriatic.</p>
+                                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center no-gutters">
+                    <div class="col-lg-6"><img class="img-fluid" src="legalImages/sea-coast.jpg" alt="clean_sea" /></div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <h4 class="text-white">Beautiful Beaches</h4>
+                                    <p class="mb-0 text-white-50">Croatia has some of the most beautiful and pristine beaches in the world. Dotted all along the Adriatic coast, these beauty spots can be found nestled among cliffs, in the secluded bays of islands, and jutting out into the waters of the Adriatic. </p>
+                                    <hr class="d-none d-lg-block mb-0 mr-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Embedded tourism video -->
+               	<div class="tourismVideo">
+				<!-- below(wmode,type,frameborder) is showing errors after implementing lazy loading JS and iframe but decided not to change it to keep functionality and page loading speed -->
+  				<iframe
+				class="lazy-youtube"
+				    data-src="https://www.youtube.com/embed/ARkVqdZfHFw?autohide=1&autoplay=1"
+					 frameborder="0"
+				    wmode="transparent"
+				    type="video/mp4"
+				    width="100%" height="100%"
+				    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+				    allowfullscreen
+				    title="Croatia Tourism">
+				  </iframe>
+				</div>
+			<div class="row justify-content-center no-gutters">	
+			  <div class="col-lg-12 bg-black">
+			 <!--<h3 class="text-center  text-white order-lg-first project">Contact our agents today to  find out more!</h3>-->
+			 <h3 class="text-center  text-white order-lg-first project">
+			<a href="mailto:therealcoderanch@gmail.com">Contact our agents today to  find out more!</a>
+			 </h3>
+			 </div>
+            </div>
+            </div>
+        </div>	
+		<footer class="some footer bg-black small text-center text-white-50">	
+				<a class="btn navbar-toggler btn-primary"  href="index.html" >Home</a>
+				<a class="btn navbar-toggler btn-primary" href="safety.html">Safety</a>				
+				<a class="btn navbar-toggler btn-primary" href="develop.html">Develop</a>	
+				<a class="btn navbar-toggler btn-primary" href="mailto:therealcoderanch@gmail.com">Contact</a>
+				<div class="container">Copyright © TRCR 2021</div>
+		</footer> 
+	</div>	
+		  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		  <script src="scripts.js"></script>
+    </body>
+</html>	
